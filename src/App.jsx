@@ -9,6 +9,8 @@ export default function App() {
 
   const [checkDigits, setcheckDigits] = useState("");
 
+
+
   const myRef = useRef(null);
 
   useEffect(() => {
@@ -61,6 +63,9 @@ export default function App() {
   }
   function copyHandler() {
     navigator.clipboard.writeText(myRef.current.value);
+    myRef.current.select();
+   
+    
   }
 
   return (
@@ -73,7 +78,7 @@ export default function App() {
           <div className="flex justify-center items-center ">
             <input
               value={inputValues}
-              className="bg-gray-400 w-full p-2 rounded-s-md text-gray-900"
+              className= 'w-full p-2 rounded-s-md text-gray-900 bg-gray-400 border-0 outline-0' 
               type="text"
               placeholder="Type Your Password"
               ref={myRef}
